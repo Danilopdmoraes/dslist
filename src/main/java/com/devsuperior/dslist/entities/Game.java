@@ -25,8 +25,12 @@ public class Game {
 	private String platforms;
 	private Double score;
 	private String imgUrl;
+	
+	@Column(columnDefinition = "TEXT")
 	private String shortDescription;
-	private int longDescription;
+	
+	@Column(columnDefinition = "TEXT")
+	private String longDescription;
 	
 	// 2 - constructor padrão, sem argumentos
 	public Game() {	
@@ -34,7 +38,7 @@ public class Game {
 
 	// 3 - constructor com argumentos (opcional) (gerado automaticamente ...souce/ generate constructor using fields):
 	public Game(Long id, String title, Integer year, String genre, String platforms, Double score, String imgUrl,
-			String shortDescription, int longDescription) {
+			String shortDescription, String longDescription) {
 		this.id = id;
 		this.title = title;
 		this.year = year;
@@ -111,11 +115,11 @@ public class Game {
 		this.shortDescription = shortDescription;
 	}
 
-	public int getLongDescription() {
+	public String  getLongDescription() {
 		return longDescription;
 	}
 
-	public void setLongDescription(int longDescription) {
+	public void setLongDescription(String longDescription) {
 		this.longDescription = longDescription;
 	}
 
